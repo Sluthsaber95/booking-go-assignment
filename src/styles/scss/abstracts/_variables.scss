@@ -1,0 +1,28 @@
+$primary-color: #f6d148;
+$airport-color: #f2817f;
+$city-color: #6eb8fa;
+$station-color: #9d9dbb;
+$district-color: #70d58e;
+$place-color: #ffa981;
+$white: #ffffff;
+
+$border-color: #a9a9a9;
+
+$width-small: 332px;
+$height-small: 15px;
+$padding-small: 12px 8% 12px 2%;
+
+$font-size-h2: 32px; // 2em
+$font-size-label: 14px;
+$font-size-input: 13px;
+
+$width-medium: 490px;
+$height-medium: 15px;
+$padding-medium: 12px 8% 12px 2%;
+$font-size-medium: 16px;
+
+$breakpoints: (
+  'medium': (min-width: 800px),
+  'large': (min-width: 1000px),
+  'huge': (min-width: 1200px),
+);

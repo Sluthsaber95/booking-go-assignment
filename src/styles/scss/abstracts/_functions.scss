@@ -1,0 +1,3 @@
+@function searchSize($device-width){
+  @return $device-width * 0.81
+}
