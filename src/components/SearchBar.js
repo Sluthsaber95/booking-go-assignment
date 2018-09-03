@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './../styles/css/main.css'
 import ResultList from './ResultList'
 
