@@ -299,3 +299,78 @@ template {
 
 * {
   font-family: Arial, Helvetica, sans-serif; }
+
+.search-bar-container {
+  width: 100%;
+  background: #f6d148;
+  display: flex;
+  justify-content: center;
+  padding-top: 7.5vw;
+  padding-bottom: 7.5vw; }
+
+.search-bar-container .search-bar-wrapper {
+  display: flex;
+  flex-direction: column; }
+
+.search-bar-container .search-bar-wrapper .search-bar-title {
+  font-size: 2em; }
+
+.search-bar-container .search-bar-wrapper .search-bar-label {
+  height: 30px;
+  font-size: 14px;
+  font-weight: 300;
+  opacity: 0.5; }
+
+.search-bar-container .search-bar-wrapper .search-bar {
+  font-size: 13px;
+  width: 73vw;
+  padding-top: 12px;
+  padding-right: 6.5vw;
+  padding-bottom: 12px;
+  padding-left: 1.6vw; }
+
+.item-wrapper {
+  max-width: 620px;
+  background: #ffffff; }
+
+.item-wrapper .item {
+  display: flex;
+  padding: 10px 0px;
+  border: 1px solid #f5f5f5; }
+
+.item-wrapper .item .item-descriptor {
+  padding: 0 9px; }
+
+.item-wrapper .item .item-descriptor .item-title {
+  font-size: 15px; }
+
+.item-wrapper .item .item-descriptor .item-area {
+  font-size: 13px;
+  opacity: 0.5; }
+
+.location-label-airport, .location-label-city, .location-label-station, .location-label-district, .location-label-place {
+  height: 15px;
+  width: 50px;
+  padding: 3px 5px;
+  margin: 2px 0 0 10px;
+  letter-spacing: 1px;
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+  font-size: 13px;
+  text-align: center;
+  color: #ffffff; }
+
+.location-label-airport {
+  background: #f2817f; }
+
+.location-label-city {
+  background: #6eb8fa; }
+
+.location-label-station {
+  background: #9d9dbb; }
+
+.location-label-district {
+  background: #70d58e; }
+
+.location-label-place {
+  background: #ffa981; }

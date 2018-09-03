@@ -1,0 +1,34 @@
+
+%location-label-shared {
+  height: 15px;
+  width: 50px;
+  padding: 3px 5px;
+  margin: 2px 0 0 10px;
+  letter-spacing: 1px;
+  border: 1px solid $color-white;
+  border-radius: 3px;
+  font-size: $font-size-input;
+  text-align: center;
+  color: $color-white;
+}
+
+.location-label-airport {
+  background: $color-airport;
+  @extend %location-label-shared;
+}
+.location-label-city {
+  background: $color-city;
+  @extend %location-label-shared;
+}
+.location-label-station {
+  background: $color-station;
+  @extend %location-label-shared;
+}
+.location-label-district {
+  background: $color-district;
+  @extend %location-label-shared;
+}
+.location-label-place {
+  background: $color-place;
+  @extend %location-label-shared;
+}
