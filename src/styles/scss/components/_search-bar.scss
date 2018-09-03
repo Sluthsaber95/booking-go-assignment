@@ -1,0 +1,29 @@
+.search-bar-container {
+  width: 100%;
+  background: $color-primary;
+  display: flex;
+  justify-content: center;
+  @include paddingWrapper(100vw);
+}
+.search-bar-container {
+  .search-bar-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .search-bar-wrapper {
+    .search-bar-title {
+      font-size: $font-size-h2;
+    }
+    .search-bar-label {
+      height: 30px;
+      font-size: $font-size-label;
+      font-weight: $font-weight-light;
+      opacity: $semi-transparent;
+    }
+    .search-bar {
+      font-size: $font-size-input;
+      @include searchBarSize(100vw);
+      max-width: 620px;
+    } 
+  }
+}

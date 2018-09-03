@@ -327,15 +327,17 @@ template {
   padding-top: 12px;
   padding-right: 6.5vw;
   padding-bottom: 12px;
-  padding-left: 1.6vw; }
+  padding-left: 1.6vw;
+  max-width: 620px; }
 
 .item-wrapper {
-  max-width: 620px;
+  width: calc(100% - 2px);
   background: #ffffff; }
 
 .item-wrapper .item {
   display: flex;
-  padding: 10px 0px;
+  width: calc(100% - 2px);
+  padding: 10px 0;
   border: 1px solid #f5f5f5; }
 
 .item-wrapper .item .item-descriptor {

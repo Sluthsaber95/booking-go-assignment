@@ -1,11 +1,12 @@
 .item-wrapper {
-  max-width: 620px;
+  width: calc(100% - 2px);
   background: $color-white;
 }
 .item-wrapper {
   .item {
     display: flex;
-    padding: 10px 0px;
+    width: calc(100% - 2px);
+    padding: 10px 0;
     border: 1px solid $color-gray-light;
   }
   .item {
