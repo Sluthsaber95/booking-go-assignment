@@ -15,7 +15,7 @@ const ResultList = ({ searchResults }) => {
         searchResults.map(data => {
           const key = shortid.generate()
           const { city, bookingId, country, iata, name, region } = data
-          const type = bookingId ? bookingId.replace(/\-\w*$/, '') : 'airport'
+          const type = bookingId ? bookingId.replace(/-\w*$/, '') : 'airport'
           const props = { city, type, country, iata, name, region }
           return <ResultCard key={key} {...props} />
         })
