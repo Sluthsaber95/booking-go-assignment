@@ -1,0 +1,25 @@
+.item-wrapper {
+  max-width: 620px;
+  background: $color-white;
+}
+.item-wrapper {
+  .item {
+    display: flex;
+    padding: 10px 0px;
+    border: 1px solid $color-gray-light;
+  }
+  .item {
+    .item-descriptor {
+      padding: 0 9px;
+    }
+    .item-descriptor {
+      .item-title {
+        font-size: $font-size-label-title;
+      }
+      .item-area {
+        font-size: $font-size-input;
+        opacity: $semi-transparent;
+      }
+    }
+  }
+}
