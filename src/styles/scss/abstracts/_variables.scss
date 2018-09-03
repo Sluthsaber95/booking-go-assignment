@@ -1,26 +1,43 @@
-$primary-color: #f6d148;
-$airport-color: #f2817f;
-$city-color: #6eb8fa;
-$station-color: #9d9dbb;
-$district-color: #70d58e;
-$place-color: #ffa981;
-$white: #ffffff;
+// Color Palette
+$color-primary: #f6d148;
+$color-airport: #f2817f;
+$color-city: #6eb8fa;
+$color-station: #9d9dbb;
+$color-district: #70d58e;
+$color-place: #ffa981;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-gray-light: #f5f5f5;
+$color-gray: #a9a9a9;
 
-$border-color: #a9a9a9;
+// Opacity
+$opaque: 1;
+$semi-transparent: 0.5;
 
+// Font Weights
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-weight-black: 900;
+
+// Base Font Sizes
+$font-size-h2: 2em;
+$font-size-label-title: 15px;
+$font-size-label: 14px;
+$font-size-input: 13px;
+
+// Dimensions, padding, margins
 $width-small: 332px;
 $height-small: 15px;
 $padding-small: 12px 8% 12px 2%;
-
-$font-size-h2: 32px; // 2em
-$font-size-label: 14px;
-$font-size-input: 13px;
 
 $width-medium: 490px;
 $height-medium: 15px;
 $padding-medium: 12px 8% 12px 2%;
 $font-size-medium: 16px;
 
+// Media Query Breakpoints
 $breakpoints: (
   'medium': (min-width: 800px),
   'large': (min-width: 1000px),

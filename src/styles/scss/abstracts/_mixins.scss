@@ -1,0 +1,12 @@
+@mixin searchBarSize($device-width){
+  width: $device-width * 0.73;
+  padding-top: 12px;
+  padding-right: $device-width * 0.065;
+  padding-bottom: 12px;
+  padding-left: $device-width * 0.016;
+}
+
+@mixin paddingWrapper($device-width){
+  padding-top: scaleWrapper($device-width);
+  padding-bottom: scaleWrapper($device-width);
+}
