@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
+import CardResultNotFound from './CardResultNotFound'
+import CardResultValid from './CardResultValid'
 import './../styles/css/main.css'
-import LocationType from './LocationType'
 
 const ResultCard = (
   { 
@@ -14,19 +15,19 @@ const ResultCard = (
     type,
   }
 ) => {
-const title = `${name}${iata ? ` (${iata})` : ''}`
-const area = `${city ? city + ', ' : (region ? region + ', ' : '')}${country}`
-const typePassed = type === 'train' ? 'station' : type
+  const title = `${name}${iata ? ` (${iata})` : ''}`
+  const area = `${city ? city + ', ' : (region ? region + ', ' : '')}${country}`
+  const typePassed = type === 'train' ? 'station' : type
+  const description = { title, area, typePassed }
   return (
-    <li className="item-wrapper">
-      <div className="item">
-        <LocationType type={typePassed} />
-        <div className="item-descriptor">
-          <div className="item-title">{title}</div>
-          <div className="item-area">{area}</div>
-        </div>
-      </div>
-    </li>
+    <Fragment>
+      {
+        title === "No results found" 
+        ? <CardResultNotFound />
+        : <CardResultValid {...description} />
+      }
+    </Fragment>
+
   )
 }
 
