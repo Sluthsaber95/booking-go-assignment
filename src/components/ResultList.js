@@ -10,7 +10,7 @@ const ResultList = ({ searchResults }) => {
     margin: 0,
   }
   return (
-    <ul style={style}>
+    <ul className="results-field" style={style}>
       {
         searchResults.map(data => {
           const key = shortid.generate()
