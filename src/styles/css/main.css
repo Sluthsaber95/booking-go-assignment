@@ -335,10 +335,7 @@ template {
   background: #ffffff; }
 
 .item-wrapper .item {
-  display: flex;
-  width: calc(100% - 2px);
-  padding: 10px 0;
-  border: 1px solid #f5f5f5; }
+  padding: 10px 0; }
 
 .item-wrapper .item .item-descriptor {
   padding: 0 9px; }
@@ -348,6 +345,16 @@ template {
 
 .item-wrapper .item .item-descriptor .item-area {
   font-size: 13px;
+  opacity: 0.5; }
+
+.item-wrapper .item-no-exist {
+  padding: 10px 0;
+  border-radius: inherit; }
+
+.item-wrapper .item-no-exist h5 {
+  font-weight: 300;
+  font-style: italic;
+  margin: 0 9px;
   opacity: 0.5; }
 
 .location-label-airport, .location-label-city, .location-label-station, .location-label-district, .location-label-place {

@@ -10,3 +10,7 @@
   padding-top: scaleWrapper($device-width);
   padding-bottom: scaleWrapper($device-width);
 }
+
+@mixin item-size {
+  padding: 10px 0;
+}

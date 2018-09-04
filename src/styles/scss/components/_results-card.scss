@@ -4,10 +4,7 @@
 }
 .item-wrapper {
   .item {
-    display: flex;
-    width: calc(100% - 2px);
-    padding: 10px 0;
-    border: 1px solid $color-gray-light;
+    @include item-size;
   }
   .item {
     .item-descriptor {
@@ -21,6 +18,18 @@
         font-size: $font-size-input;
         opacity: $semi-transparent;
       }
+    }
+  }
+  .item-no-exist {
+    @include item-size;
+    border-radius: inherit;
+  }
+  .item-no-exist {
+    h5 {
+      font-weight: $font-weight-light;
+      font-style: italic;
+      margin: 0 9px;
+      opacity: $semi-transparent;
     }
   }
 }
