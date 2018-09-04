@@ -15,23 +15,27 @@ describe('Search Bar Functionality', function () {
       alphanumericValues.split('').forEach(alphanumeric => {
         it(`returns no result when I enter the single character "${alphanumeric}" into pick up location`, () => {
           cy.get('.search-bar')
-            .type(alphanumeric, { delay: 2000 })
+            .type(alphanumeric)
           cy.get('.results-field')
-            .children()
-            .should('have.length', 0)
+            .should('not.exist')
         })
       })
     })
     context('entering an unrecognised term', () => {
-      const unrecognisedTerms = ['xx']
+      const unrecognisedTerms = ['xxasdfgdga']
       unrecognisedTerms.forEach(term => {
         it(`returns "No results found" when entering "${term}" into pick up location`, () => {
           cy.get('.search-bar')
             .type(term)
-          
+
           cy.get('.results-field')
-            .children()
-            .should('have.length', 0)
+            .should('have.length', 1)
+
+          cy.get('.item-wrapper')
+            .should('exist')
+          
+          cy.get('.item-no-exist')
+            .should('have.text', 'No results found')
         })
       })
     })
@@ -53,18 +57,16 @@ describe('Search Bar Functionality', function () {
             .type(singleCharacter, { delay: 2000 })
         
           cy.get('.results-field')
-            .children()
-            .should('have.length', 0)
+            .should('not.exist')
         })
       })
-      it('returns no results if I remove the search term', term => {
+      it('returns no results if I remove the search term', () => {
         cy.get('.search-bar')
-          .type('manchester', { delay: 100})
+          .type('manchester', { delay: 10})
           .clear()
 
-        cy.get('.results-field')
-          .children()
-          .should('have.length', 0)
+        cy.get('.item-wrapper')
+          .should('not.exist')
       })
     })
   })
@@ -76,8 +78,7 @@ describe('Search Bar Functionality', function () {
           .type(term)
           
         cy.get('.results-field')
-          .children()
-          .should('not.have.length', 0)
+          .should('exist')
       })
     })
     recognisedTerms.forEach(term => {
