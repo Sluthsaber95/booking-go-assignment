@@ -1,13 +1,11 @@
 import React, { Fragment } from 'react'
-import expect from 'expect'
-
 import { storiesOf } from '@storybook/react'
-import { specs, describe, it } from 'storybook-addon-specifications'
-import { action } from '@storybook/addon-actions'
-import { linkTo } from '@storybook/addon-links'
-import { Button, Welcome } from '@storybook/react/demo'
+
+import App from './../App'
 import LocationType from './../components/LocationType'
+import SearchBar from './../components/SearchBar'
 import ResultCard from './../components/ResultCard'
+
 
 const centerStyles = {
   height: '50vw',
@@ -131,31 +129,12 @@ storiesOf('ResultCard', module)
       </div>
     )
   })
+  .add('with no results found', () => {
+    const props = {
+      name: "No results found"
+    }
+    return <ResultCard {...props} />
+  })
 
-
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />)
-
-storiesOf('Button', module)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
-    </Button>
-  ))
-  .add('Hello World', function () {
-  const story =
-    <button onClick={action('Hello World')}>
-      Hello World
-    </button>
-
-  specs(() => describe('Hello World', function () {
-    it('Should have the Hello World label', function () {
-      let output = mount(story)
-      expect(output.text()).toContain('Hello World')
-    })
-  }))
-
-  return story
-})
+storiesOf('SearchBar', module).add('display design - no interaction', () => <SearchBar />)
+storiesOf('App', module).add('demo', () => <App />)
