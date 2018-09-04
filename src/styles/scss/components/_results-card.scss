@@ -4,6 +4,7 @@
 }
 .item-wrapper {
   .item {
+    display: flex;
     @include item-size;
   }
   .item {

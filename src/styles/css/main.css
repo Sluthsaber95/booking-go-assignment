@@ -335,6 +335,7 @@ template {
   background: #ffffff; }
 
 .item-wrapper .item {
+  display: flex;
   padding: 10px 0; }
 
 .item-wrapper .item .item-descriptor {
