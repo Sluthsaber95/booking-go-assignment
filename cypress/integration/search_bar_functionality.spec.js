@@ -13,10 +13,10 @@ describe('Search Bar Functionality', function () {
     context('entering a single character', () => {
       const alphanumericValues = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234556789'
       alphanumericValues.split('').forEach(alphanumeric => {
-        it(`returns no result when I enter a single ${alphanumeric} character into pick up location`, () => {
-          cy.find('.search-bar')
-            .type(alphanumeric)
-          cy.find('.results-field')
+        it(`returns no result when I enter the single character "${alphanumeric}" into pick up location`, () => {
+          cy.get('.search-bar')
+            .type(alphanumeric, { delay: 2000 })
+          cy.get('.results-field')
             .children()
             .should('have.length', 0)
         })
@@ -26,31 +26,45 @@ describe('Search Bar Functionality', function () {
       const unrecognisedTerms = ['xx']
       unrecognisedTerms.forEach(term => {
         it(`returns "No results found" when entering "${term}" into pick up location`, () => {
-          cy.find('.search-bar')
+          cy.get('.search-bar')
             .type(term)
           
-          cy.find('.results-field')
+          cy.get('.results-field')
             .children()
             .should('have.length', 0)
         })
       })
     })
-    context('entering a term, then removing all characters, expect 1 character', () => {
+    context('entering a term & removing characters', () => {
       const startTerms = ['manchester', 'london', 'lancashire']
       const endTerms = ['a', 'b', 'c']
 
-      startTerms.forEach(term => {
-        it('returns no results if I remove the search term leaving 1 character', () => {
-          cy.find('.search-bar')
-            .type(term)
-            .tick(1000)
-            .type(term)
-            .tick(1000)
+      startTerms.forEach((term, index) => {
+        it(`returns no results if I remove the search term leaving the ${endTerms[index]} character`, () => {
+          const singleCharacter = endTerms[index]
+
+          cy.get('.search-bar')
+            .type(term, { delay: 100})
           
-          cy.find('.results-field')
+          cy.get('.search-bar')
+            .clear()
+
+          cy.get('.search-bar')
+            .type(singleCharacter, { delay: 2000 })
+        
+          cy.get('.results-field')
             .children()
             .should('have.length', 0)
         })
+      })
+      it('returns no results if I remove the search term', term => {
+        cy.get('.search-bar')
+          .type('manchester', { delay: 100})
+          .clear()
+
+        cy.get('.results-field')
+          .children()
+          .should('have.length', 0)
       })
     })
   })
@@ -58,20 +72,20 @@ describe('Search Bar Functionality', function () {
     const recognisedTerms = ['manchester', 'london', 'lancashire']
     recognisedTerms.forEach(term => {
       it(`return results when I enter ${term} into pick up location`, () => {
-        cy.find('.search-bar')
+        cy.get('.search-bar')
           .type(term)
           
-        cy.find('.results-field')
+        cy.get('.results-field')
           .children()
           .should('not.have.length', 0)
       })
     })
     recognisedTerms.forEach(term => {
       it(`returns 6 results when I enter ${term} into pick up location`, () => {
-        cy.find('.search-bar')
+        cy.get('.search-bar')
           .type(term)
 
-        cy.find('.results-field')
+        cy.get('.results-field')
           .children()
           .should('have.length', 6)
       })
